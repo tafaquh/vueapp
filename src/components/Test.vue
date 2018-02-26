@@ -6,12 +6,12 @@
 </template>
 
 <script>
-    export default{
+    export default {
         name: 'test',
         data() {
-            return{
+            return {
                 title: 'Hello Tafaquh',
-                use: {
+                user: {
                     firstName: 'Tafaquh',
                     lastName: 'Fiddin'
                 }
