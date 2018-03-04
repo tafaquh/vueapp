@@ -2,8 +2,10 @@
     <div class="users">
       <h1>Users</h1>
       <form v-on:submit="addUser">
-        <input type="text" v-model="newUser.name" placeholder="Input name"> <br/>
-        <input type="text" v-model="newUser.email" placeholder="Input email"><br/>
+        <input type="text" v-model="newUser.name" placeholder="Input name">
+        <br/>
+        <input type="text" v-model="newUser.email" placeholder="Input email">
+        <br/>
         <input type="submit" value="Submit">
       </form>
       <ul>
@@ -40,8 +42,13 @@ export default {
     }
   },
   methods: {
-    addUser: function () {
-      console.log('add')
+    addUser: function (e) {
+      this.users.push({
+        name: this.newUser.name,
+        email: this.newUser.email,
+        contact: false
+      })
+      e.preventDefault()
     }
   }
 }
