@@ -1,26 +1,12 @@
 <template>
-    <div class="test">
-        <input type="text" v-model="title"><br>
-        <h1>{{title}}</h1>
-        <p v-if="showName">{{user.firstName}}</p>
-        <p v-else>Nobody</p>
-        <ul>
-            <li v-for="(item, index) in items" v-bind:key="index">{{item.title}}</li>
-        </ul>
-        <button v-on:click="greet('Hello You')">Say Greeting</button>
-        <input type="text" v-on:keyup="pressKey" v-on:keyup.enter="enterHit">
-        <hr />
-        <label>First Name : </label> <input type="text" v-model="user.firstName">
-        <br />
-        <label>Last Name : </label> <input type="text" v-model="user.lastName">
-        <h3>{{fullName}}</h3>
-        <h2>{{msg}}</h2>
+    <div class="users">
+        
     </div>
 </template>
 
 <script>
 export default {
-  name: 'test',
+  name: 'user',
   props: {
     msg: {
       type: String,
