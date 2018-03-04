@@ -1,47 +1,47 @@
 <template>
     <div class="users">
-        
+      <h1>Users</h1>
+      <form v-on:submit="addUser">
+        <input type="text" v-model="newUser.name" placeholder="Input name"> <br/>
+        <input type="text" v-model="newUser.email" placeholder="Input email"><br/>
+        <input type="submit" value="Submit">
+      </form>
+      <ul>
+        <li v-for="user in users">
+          {{user.name}}: {{user.email}}
+        </li>
+      </ul>
     </div>
 </template>
 
 <script>
 export default {
-  name: 'user',
-  props: {
-    msg: {
-      type: String,
-      default: 'Foobar'
-    }
-  },
+  name: 'users',
   data () {
     return {
-      title: 'Hello Tafaquh',
-      user: {
-        firstName: 'Tafaquh',
-        lastName: 'Fiddin'
-      },
-      showName: true,
-      items: [
-        {title: 'Item One'},
-        {title: 'Item Two'},
-        {title: 'Item Three'}
+      newUser: {},
+      users: [
+        {
+          name: 'Tafaquh Fiddin',
+          email: 'tafaquh@pens.ac.id',
+          contact: false
+        },
+        {
+          name: 'Monkey D Luffy',
+          email: 'luffy@pens.ac.id',
+          contact: false
+        },
+        {
+          name: 'Roronoa Zoro',
+          email: 'zoro@pens.ac.id',
+          contact: false
+        }
       ]
     }
   },
   methods: {
-    greet: function (greeting) {
-      alert(greeting)
-    },
-    pressKey: function (e) {
-      console.log(e.target.value)
-    },
-    enterHit: function () {
-      console.log('You hit enter')
-    }
-  },
-  computed: {
-    fullName: function () {
-      return this.user.firstName + ' ' + this.user.lastName
+    addUser: function () {
+      console.log('add')
     }
   }
 }

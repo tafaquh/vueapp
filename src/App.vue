@@ -1,15 +1,17 @@
 <template>
   <div id="app">
-    <test msg="Hello"></test>
+    <users></users>
   </div>
 </template>
 
 <script>
 import Test from './components/test'
+import Users from './components/users'
+
 export default {
   name: 'App',
   components: {
-    Test
+    Test, Users
   }
 }
 </script>
